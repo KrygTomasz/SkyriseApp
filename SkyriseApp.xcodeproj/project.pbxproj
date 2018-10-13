@@ -10,6 +10,13 @@
 		0A2261BF217256C500D3ABA1 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261BD217256C500D3ABA1 /* PodcastTableViewCell.swift */; };
 		0A2261C0217256C500D3ABA1 /* PodcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2261BE217256C500D3ABA1 /* PodcastTableViewCell.xib */; };
 		0A2261C621725B2800D3ABA1 /* PodcastDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261C521725B2800D3ABA1 /* PodcastDetailsViewController.swift */; };
+		0A2261C8217263DB00D3ABA1 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261C7217263DB00D3ABA1 /* Podcast.swift */; };
+		0A2261CF217268DA00D3ABA1 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261CE217268DA00D3ABA1 /* Feed.swift */; };
+		0A2261D12172691E00D3ABA1 /* PodcastFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261D02172691E00D3ABA1 /* PodcastFeed.swift */; };
+		0A2261D32172698200D3ABA1 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261D22172698200D3ABA1 /* WebService.swift */; };
+		0A2261D5217269DA00D3ABA1 /* WSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261D4217269DA00D3ABA1 /* WSError.swift */; };
+		0A2261D7217269EB00D3ABA1 /* WSResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261D6217269EB00D3ABA1 /* WSResult.swift */; };
+		0A2261DA21726C0A00D3ABA1 /* PodcastList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261D921726C0A00D3ABA1 /* PodcastList.swift */; };
 		0A27CC962172523A002FF211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A27CC952172523A002FF211 /* AppDelegate.swift */; };
 		0A27CC982172523A002FF211 /* PodcastListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A27CC972172523A002FF211 /* PodcastListTableViewController.swift */; };
 		0A27CC9B2172523A002FF211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A27CC992172523A002FF211 /* Main.storyboard */; };
@@ -21,6 +28,13 @@
 		0A2261BD217256C500D3ABA1 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		0A2261BE217256C500D3ABA1 /* PodcastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastTableViewCell.xib; sourceTree = "<group>"; };
 		0A2261C521725B2800D3ABA1 /* PodcastDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewController.swift; sourceTree = "<group>"; };
+		0A2261C7217263DB00D3ABA1 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		0A2261CE217268DA00D3ABA1 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		0A2261D02172691E00D3ABA1 /* PodcastFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastFeed.swift; sourceTree = "<group>"; };
+		0A2261D22172698200D3ABA1 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		0A2261D4217269DA00D3ABA1 /* WSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSError.swift; sourceTree = "<group>"; };
+		0A2261D6217269EB00D3ABA1 /* WSResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSResult.swift; sourceTree = "<group>"; };
+		0A2261D921726C0A00D3ABA1 /* PodcastList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastList.swift; sourceTree = "<group>"; };
 		0A27CC922172523A002FF211 /* SkyriseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyriseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A27CC952172523A002FF211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A27CC972172523A002FF211 /* PodcastListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListTableViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +55,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A2261C92172645600D3ABA1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A2261CA2172645B00D3ABA1 /* ViewControllers */,
+				0A2261CB2172646600D3ABA1 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0A2261CA2172645B00D3ABA1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A27CC972172523A002FF211 /* PodcastListTableViewController.swift */,
+				0A2261C521725B2800D3ABA1 /* PodcastDetailsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0A2261CB2172646600D3ABA1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0A2261BD217256C500D3ABA1 /* PodcastTableViewCell.swift */,
+				0A2261BE217256C500D3ABA1 /* PodcastTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0A2261CC217268C900D3ABA1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0A2261CD217268D100D3ABA1 /* Feeds */,
+				0A2261D22172698200D3ABA1 /* WebService.swift */,
+				0A2261D4217269DA00D3ABA1 /* WSError.swift */,
+				0A2261D6217269EB00D3ABA1 /* WSResult.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0A2261CD217268D100D3ABA1 /* Feeds */ = {
+			isa = PBXGroup;
+			children = (
+				0A2261CE217268DA00D3ABA1 /* Feed.swift */,
+				0A2261D02172691E00D3ABA1 /* PodcastFeed.swift */,
+			);
+			path = Feeds;
+			sourceTree = "<group>";
+		};
+		0A2261D821726BF100D3ABA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A2261D921726C0A00D3ABA1 /* PodcastList.swift */,
+				0A2261C7217263DB00D3ABA1 /* Podcast.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0A27CC892172523A002FF211 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +130,14 @@
 		0A27CC942172523A002FF211 /* SkyriseApp */ = {
 			isa = PBXGroup;
 			children = (
+				0A2261D821726BF100D3ABA1 /* Models */,
+				0A2261CC217268C900D3ABA1 /* Networking */,
+				0A2261C92172645600D3ABA1 /* Views */,
 				0A27CC952172523A002FF211 /* AppDelegate.swift */,
-				0A27CC972172523A002FF211 /* PodcastListTableViewController.swift */,
 				0A27CC992172523A002FF211 /* Main.storyboard */,
 				0A27CC9C2172523B002FF211 /* Assets.xcassets */,
 				0A27CC9E2172523B002FF211 /* LaunchScreen.storyboard */,
 				0A27CCA12172523B002FF211 /* Info.plist */,
-				0A2261BD217256C500D3ABA1 /* PodcastTableViewCell.swift */,
-				0A2261BE217256C500D3ABA1 /* PodcastTableViewCell.xib */,
-				0A2261C521725B2800D3ABA1 /* PodcastDetailsViewController.swift */,
 			);
 			path = SkyriseApp;
 			sourceTree = "<group>";
@@ -145,10 +214,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2261D7217269EB00D3ABA1 /* WSResult.swift in Sources */,
+				0A2261D5217269DA00D3ABA1 /* WSError.swift in Sources */,
 				0A27CC982172523A002FF211 /* PodcastListTableViewController.swift in Sources */,
+				0A2261CF217268DA00D3ABA1 /* Feed.swift in Sources */,
+				0A2261DA21726C0A00D3ABA1 /* PodcastList.swift in Sources */,
+				0A2261D32172698200D3ABA1 /* WebService.swift in Sources */,
 				0A2261BF217256C500D3ABA1 /* PodcastTableViewCell.swift in Sources */,
+				0A2261D12172691E00D3ABA1 /* PodcastFeed.swift in Sources */,
 				0A2261C621725B2800D3ABA1 /* PodcastDetailsViewController.swift in Sources */,
 				0A27CC962172523A002FF211 /* AppDelegate.swift in Sources */,
+				0A2261C8217263DB00D3ABA1 /* Podcast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
