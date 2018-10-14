@@ -26,6 +26,7 @@
 		0AE21B84217368F500584184 /* PodcastListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B83217368F400584184 /* PodcastListViewModel.swift */; };
 		0AE21B87217369F500584184 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B86217369F500584184 /* TableViewDataSource.swift */; };
 		0AE21B8A21736AEE00584184 /* TableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B8921736AEE00584184 /* TableViewDataProvider.swift */; };
+		0AE21B8D2173A4F400584184 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B8C2173A4F400584184 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		0AE21B83217368F400584184 /* PodcastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListViewModel.swift; sourceTree = "<group>"; };
 		0AE21B86217369F500584184 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		0AE21B8921736AEE00584184 /* TableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataProvider.swift; sourceTree = "<group>"; };
+		0AE21B8C2173A4F400584184 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		0A27CC942172523A002FF211 /* SkyriseApp */ = {
 			isa = PBXGroup;
 			children = (
+				0AE21B8B2173A4E700584184 /* Common */,
 				0AE21B8821736ADC00584184 /* DataProvider */,
 				0AE21B85217369E800584184 /* DataSource */,
 				0AE21B80217367CF00584184 /* ViewModels */,
@@ -176,6 +179,14 @@
 				0AE21B8921736AEE00584184 /* TableViewDataProvider.swift */,
 			);
 			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		0AE21B8B2173A4E700584184 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0AE21B8C2173A4F400584184 /* UIColor+Extensions.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 				0A2261BF217256C500D3ABA1 /* PodcastTableViewCell.swift in Sources */,
 				0AE21B82217367EC00584184 /* PodcastViewModel.swift in Sources */,
 				0A2261D12172691E00D3ABA1 /* PodcastFeed.swift in Sources */,
+				0AE21B8D2173A4F400584184 /* UIColor+Extensions.swift in Sources */,
 				0A2261C621725B2800D3ABA1 /* PodcastDetailsViewController.swift in Sources */,
 				0A27CC962172523A002FF211 /* AppDelegate.swift in Sources */,
 				0AE21B87217369F500584184 /* TableViewDataSource.swift in Sources */,

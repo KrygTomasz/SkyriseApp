@@ -84,6 +84,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="r2g-9e-c7c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="6zI-yW-gJh"/>
                     <constraint firstAttribute="bottom" secondItem="r2g-9e-c7c" secondAttribute="bottom" constant="4" id="MTQ-vh-fnt"/>
@@ -91,6 +92,7 @@
                     <constraint firstAttribute="trailing" secondItem="r2g-9e-c7c" secondAttribute="trailing" constant="8" id="mj9-g9-b6d"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="artistNameLabel" destination="ze8-nJ-J4Z" id="4UH-aq-sX7"/>

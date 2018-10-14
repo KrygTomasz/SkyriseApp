@@ -10,7 +10,7 @@ import UIKit
 
 class PodcastListTableViewController: UITableViewController {
 
-    private var podcastListViewModel: PodcastListViewModel!
+    private var podcastListViewModel: PodcastListViewModel = PodcastListViewModel()
     private var webService: WebService<PodcastList>!
     private var dataSource: TableViewDataSource<PodcastTableViewCell, PodcastViewModel>!
     private var dataProvider: DataProvider<PodcastList>!
@@ -18,11 +18,17 @@ class PodcastListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCells()
-        self.podcastListViewModel = PodcastListViewModel()
+        prepareTableView()
         prepareDataSource()
         prepareDataProvider()
         dataProvider.getData()
+    }
+    
+    private func prepareTableView() {
+        registerCells()
+        tableView.keyboardDismissMode = .interactive
+        tableView.backgroundColor = .backgroundColor
+        tableView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
     }
     
     private func registerCells() {
