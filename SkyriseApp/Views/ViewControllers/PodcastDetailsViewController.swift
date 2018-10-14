@@ -10,8 +10,39 @@ import UIKit
 
 class PodcastDetailsViewController: UIViewController {
 
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            containerView.layer.cornerRadius = 12.0
+        }
+    }
+    @IBOutlet weak var priceLabel: UILabel! {
+        didSet {
+            priceLabel.textColor = .lightGray
+        }
+    }
+    @IBOutlet weak var coverContentView: UIView! {
+        didSet {
+            coverContentView.isHidden = true
+        }
+    }
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var collectionTitleLabel: UILabel! {
+        didSet {
+            collectionTitleLabel.text = "from"
+        }
+    }
+    @IBOutlet weak var collectionNameLabel: UILabel!
+    @IBOutlet weak var artistTitleLabel: UILabel! {
+        didSet {
+            artistTitleLabel.text = "by"
+        }
+    }
+    @IBOutlet weak var artistNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .backgroundColor
     }
 }
 
