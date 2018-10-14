@@ -49,6 +49,7 @@ class PodcastListTableViewController: UITableViewController {
     
     private func configureCell(_ cell: PodcastTableViewCell, using viewModel: PodcastViewModel) {
         cell.trackNameLabel.text = viewModel.trackName
+        cell.artistNameLabel.text = viewModel.artistName
     }
     
     private func goToPodcastDetails() {
