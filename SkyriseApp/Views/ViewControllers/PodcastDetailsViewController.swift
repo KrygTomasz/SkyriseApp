@@ -46,6 +46,7 @@ class PodcastDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.prepareNavigationBar(withTitle: "Details")
         self.view.backgroundColor = .backgroundColor
         updateUI()
     }
@@ -85,6 +86,7 @@ class PodcastDetailsViewController: UIViewController {
     
 }
 
+//MARK: Constructor
 extension PodcastDetailsViewController {
     
     static func getInstance(using podcastDetailsViewModel: PodcastDetailsViewModel) -> PodcastDetailsViewController {

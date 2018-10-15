@@ -16,6 +16,7 @@ class PodcastListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.prepareNavigationBar(withTitle: "Podcasts")
         podcastListViewModel = PodcastListViewModel(onDataUpdated: {
             DispatchQueue.main.async {
                 self.prepareDataSource()
@@ -59,6 +60,11 @@ class PodcastListTableViewController: UITableViewController {
         let vc = PodcastDetailsViewController.getInstance(using: podcastDetailsViewModel)
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+}
+
+//MARK: UITableViewDelegate
+extension PodcastListTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = podcastListViewModel.podcastViewModel(at: indexPath.row)
