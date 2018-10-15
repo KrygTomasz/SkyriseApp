@@ -58,13 +58,15 @@ class PodcastListTableViewController: UITableViewController {
         cell.artistNameLabel.text = viewModel.artistName
     }
     
-    private func goToPodcastDetails() {
-        let vc = PodcastDetailsViewController.getInstance()
+    private func goToPodcastDetails(using podcastViewModel: PodcastViewModel) {
+        let podcastDetailsViewModel = PodcastDetailsViewModel(using: podcastViewModel)
+        let vc = PodcastDetailsViewController.getInstance(using: podcastDetailsViewModel)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        goToPodcastDetails()
+        let model = podcastListViewModel.podcastViewModel(at: indexPath.row)
+        goToPodcastDetails(using: model)
     }
     
 }

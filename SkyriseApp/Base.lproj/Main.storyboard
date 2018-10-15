@@ -50,7 +50,7 @@
         <!--Podcast Details View Controller-->
         <scene sceneID="hAR-43-d36">
             <objects>
-                <viewController storyboardIdentifier="PodcastDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ki5-ce-RSm" customClass="PodcastDetailsViewController" customModule="XSolveApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PodcastDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ki5-ce-RSm" customClass="PodcastDetailsViewController" customModule="SkyriseApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="V32-nM-Yt1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,13 +148,13 @@
                                                         <rect key="frame" x="0.0" y="498.5" width="343" height="128"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcG-xr-hnX">
-                                                                <rect key="frame" x="32" y="0.0" width="279" height="81"/>
+                                                                <rect key="frame" x="32" y="0.0" width="279" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZE-dC-cAS">
-                                                                <rect key="frame" x="24" y="89" width="295" height="23"/>
+                                                                <rect key="frame" x="24" y="28.5" width="295" height="83.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -205,8 +205,10 @@
                         <viewLayoutGuide key="safeArea" id="n5L-GD-BCg"/>
                     </view>
                     <connections>
+                        <outlet property="artistContentView" destination="QIx-Rf-Rvf" id="VEH-ak-vKM"/>
                         <outlet property="artistNameLabel" destination="CZE-dC-cAS" id="2DI-s3-iEJ"/>
                         <outlet property="artistTitleLabel" destination="LcG-xr-hnX" id="4Nu-LC-sVg"/>
+                        <outlet property="collectionContentView" destination="sV6-aZ-zDi" id="mvp-Po-RDc"/>
                         <outlet property="collectionNameLabel" destination="GUq-Nl-uWF" id="fon-p7-82w"/>
                         <outlet property="collectionTitleLabel" destination="ccg-g2-jon" id="h3M-HF-etA"/>
                         <outlet property="containerView" destination="ACE-Ok-3wZ" id="VVX-Mu-P4m"/>

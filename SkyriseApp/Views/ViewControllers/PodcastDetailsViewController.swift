@@ -27,12 +27,14 @@ class PodcastDetailsViewController: UIViewController {
     }
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var collectionContentView: UIView!
     @IBOutlet weak var collectionTitleLabel: UILabel! {
         didSet {
             collectionTitleLabel.text = "from"
         }
     }
     @IBOutlet weak var collectionNameLabel: UILabel!
+    @IBOutlet weak var artistContentView: UIView!
     @IBOutlet weak var artistTitleLabel: UILabel! {
         didSet {
             artistTitleLabel.text = "by"
@@ -40,19 +42,43 @@ class PodcastDetailsViewController: UIViewController {
     }
     @IBOutlet weak var artistNameLabel: UILabel!
     
+    var podcastDetailsViewModel: PodcastDetailsViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .backgroundColor
+        updateUI()
     }
+    
+    private func updateUI() {
+        prepareData()
+        hideEmptyViews()
+    }
+    
+    private func prepareData() {
+        guard let vm = podcastDetailsViewModel else { return }
+        priceLabel.text = vm.priceText
+        trackNameLabel.text = vm.trackName
+        collectionNameLabel.text = vm.collectionName
+        artistNameLabel.text = vm.artistName
+    }
+    
+    private func hideEmptyViews() {
+        guard let vm = podcastDetailsViewModel else { return }
+        collectionContentView.isHidden = vm.collectionIsHidden
+        artistContentView.isHidden = vm.artistIsHidden
+    }
+    
 }
 
 extension PodcastDetailsViewController {
     
-    static func getInstance() -> PodcastDetailsViewController {
+    static func getInstance(using podcastDetailsViewModel: PodcastDetailsViewModel) -> PodcastDetailsViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let podcastDetailsVC = storyboard.instantiateViewController(withIdentifier: "PodcastDetailsViewController") as? PodcastDetailsViewController else {
             fatalError("Cannot instantiate PodcastDetailsViewController")
         }
+        podcastDetailsVC.podcastDetailsViewModel = podcastDetailsViewModel
         return podcastDetailsVC
     }
     
