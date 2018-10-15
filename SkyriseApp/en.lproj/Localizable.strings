@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  SkyriseApp
+
+  Created by Krygu on 15/10/2018.
+  Copyright © 2018 Krygu. All rights reserved.
+*/
+
+"podcasts" = "Podcasts";
+"podcastDetails" = "Podcasts details";
+"from" = "from";
+"by" = "by";
+"wrongUrl" = "Wrong url address";
+"serviceError" = "Web service connection error";
+"invalidData" = "Invalid data";
+"jsonDecodingFailure" = "JSON decoding failure – check model properties";

@@ -16,7 +16,7 @@ class PodcastListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.prepareNavigationBar(withTitle: "Podcasts")
+        self.prepareNavigationBar(withTitle: "podcasts".localized())
         podcastListViewModel = PodcastListViewModel(onDataUpdated: {
             DispatchQueue.main.async {
                 self.prepareDataSource()

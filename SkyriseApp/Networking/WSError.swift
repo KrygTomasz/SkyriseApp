@@ -17,13 +17,13 @@ enum WSError: Error {
     var localizedDescription: String {
         switch self {
         case .wrongUrl:
-            return "wrongUrl"
+            return "wrongUrl".localized()
         case .serviceError:
-            return "serviceError"
+            return "serviceError".localized()
         case .invalidData:
-            return "invalidData"
+            return "invalidData".localized()
         case .jsonDecodingFailure:
-            return "jsonDecodingFailure"
+            return "jsonDecodingFailure".localized()
         }
     }
 }

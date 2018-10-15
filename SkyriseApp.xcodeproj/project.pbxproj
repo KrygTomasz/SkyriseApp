@@ -26,6 +26,8 @@
 		0AD7841B217453AA0085DB80 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7841A217453AA0085DB80 /* ImageDownloader.swift */; };
 		0AD7841D217464E50085DB80 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7841C217464E50085DB80 /* UIViewController+Extensions.swift */; };
 		0AD7843221746EB70085DB80 /* AuthorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7843121746EB70085DB80 /* AuthorPicker.swift */; };
+		0AD7843D21749CA00085DB80 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AD7843F21749CA00085DB80 /* Localizable.strings */; };
+		0AD7844221749D270085DB80 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7844121749D270085DB80 /* String+Extensions.swift */; };
 		0AE21B82217367EC00584184 /* PodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B81217367EC00584184 /* PodcastViewModel.swift */; };
 		0AE21B84217368F500584184 /* PodcastListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B83217368F400584184 /* PodcastListViewModel.swift */; };
 		0AE21B87217369F500584184 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B86217369F500584184 /* TableViewDataSource.swift */; };
@@ -55,6 +57,9 @@
 		0AD7841A217453AA0085DB80 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		0AD7841C217464E50085DB80 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0AD7843121746EB70085DB80 /* AuthorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorPicker.swift; sourceTree = "<group>"; };
+		0AD7843E21749CA00085DB80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0AD7844021749CA90085DB80 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0AD7844121749D270085DB80 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		0AE21B81217367EC00584184 /* PodcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewModel.swift; sourceTree = "<group>"; };
 		0AE21B83217368F400584184 /* PodcastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListViewModel.swift; sourceTree = "<group>"; };
 		0AE21B86217369F500584184 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
@@ -162,6 +167,7 @@
 				0A27CC9E2172523B002FF211 /* LaunchScreen.storyboard */,
 				0A27CCA12172523B002FF211 /* Info.plist */,
 				0AD7843121746EB70085DB80 /* AuthorPicker.swift */,
+				0AD7843F21749CA00085DB80 /* Localizable.strings */,
 			);
 			path = SkyriseApp;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 			children = (
 				0AE21B8C2173A4F400584184 /* UIColor+Extensions.swift */,
 				0AD7841C217464E50085DB80 /* UIViewController+Extensions.swift */,
+				0AD7844121749D270085DB80 /* String+Extensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -243,6 +250,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = 0A27CC892172523A002FF211;
 			productRefGroup = 0A27CC932172523A002FF211 /* Products */;
@@ -259,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD7843D21749CA00085DB80 /* Localizable.strings in Resources */,
 				0A27CCA02172523B002FF211 /* LaunchScreen.storyboard in Resources */,
 				0A27CC9D2172523B002FF211 /* Assets.xcassets in Resources */,
 				0A2261C0217256C500D3ABA1 /* PodcastTableViewCell.xib in Resources */,
@@ -274,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2261D7217269EB00D3ABA1 /* WSResult.swift in Sources */,
+				0AD7844221749D270085DB80 /* String+Extensions.swift in Sources */,
 				0A2261D5217269DA00D3ABA1 /* WSError.swift in Sources */,
 				0AE21B8A21736AEE00584184 /* DataProvider.swift in Sources */,
 				0A27CC982172523A002FF211 /* PodcastListTableViewController.swift in Sources */,
@@ -315,6 +325,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		0AD7843F21749CA00085DB80 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AD7843E21749CA00085DB80 /* en */,
+				0AD7844021749CA90085DB80 /* pl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -322,6 +341,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -383,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

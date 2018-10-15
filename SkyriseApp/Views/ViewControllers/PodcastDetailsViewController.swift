@@ -30,14 +30,14 @@ class PodcastDetailsViewController: UIViewController {
     @IBOutlet weak var collectionContentView: UIView!
     @IBOutlet weak var collectionTitleLabel: UILabel! {
         didSet {
-            collectionTitleLabel.text = "from"
+            collectionTitleLabel.text = "from".localized()
         }
     }
     @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var artistContentView: UIView!
     @IBOutlet weak var artistTitleLabel: UILabel! {
         didSet {
-            artistTitleLabel.text = "by"
+            artistTitleLabel.text = "by".localized()
         }
     }
     @IBOutlet weak var artistNameLabel: UILabel!
@@ -46,7 +46,7 @@ class PodcastDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.prepareNavigationBar(withTitle: "Details")
+        self.prepareNavigationBar(withTitle: "podcastDetails".localized())
         self.view.backgroundColor = .backgroundColor
         updateUI()
     }
