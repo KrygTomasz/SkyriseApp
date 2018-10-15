@@ -1,5 +1,5 @@
 //
-//  TableViewDataProvider.swift
+//  DataProvider.swift
 //  SkyriseApp
 //
 //  Created by Krygu on 14/10/2018.

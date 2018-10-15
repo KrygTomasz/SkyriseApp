@@ -12,7 +12,7 @@ import UIKit
 class PodcastDetailsViewModel {
     
     //MARK: Properties
-    private var podcastViewModel: PodcastViewModel
+    private let podcastViewModel: PodcastViewModel
     
     var trackName: String {
         guard let track = podcastViewModel.trackName else {
@@ -59,8 +59,14 @@ class PodcastDetailsViewModel {
         return false
     }
     
+    //MARK: Initializer
     init(using podcastViewModel: PodcastViewModel) {
         self.podcastViewModel = podcastViewModel
+    }
+    
+    //MARK: Image loading method
+    func loadImage(completion: @escaping (UIImage?) -> Void) {
+        self.podcastViewModel.loadBigImage(completion: completion)
     }
     
 }

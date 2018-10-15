@@ -61,12 +61,26 @@ class PodcastDetailsViewController: UIViewController {
         trackNameLabel.text = vm.trackName
         collectionNameLabel.text = vm.collectionName
         artistNameLabel.text = vm.artistName
+        vm.loadImage { [weak self] coverImage in
+            DispatchQueue.main.async {
+                self?.prepareCover(coverImage)
+            }
+        }
     }
     
     private func hideEmptyViews() {
         guard let vm = podcastDetailsViewModel else { return }
         collectionContentView.isHidden = vm.collectionIsHidden
         artistContentView.isHidden = vm.artistIsHidden
+    }
+    
+    private func prepareCover(_ image: UIImage?) {
+        if let imageObj = image {
+            self.coverImageView.image = imageObj
+            self.coverContentView.isHidden = false
+        } else {
+            self.coverContentView.isHidden = true
+        }
     }
     
 }

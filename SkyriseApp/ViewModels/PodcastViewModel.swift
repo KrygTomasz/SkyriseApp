@@ -31,4 +31,13 @@ class PodcastViewModel {
         self.currency = podcast.currency
     }
     
+    //MARK: Image loading methods
+    func loadSmallImage(completion: @escaping (UIImage?) -> Void) {
+        ImageDownloader.downloadImage(from: artworkUrl60, completion: completion)
+    }
+    
+    func loadBigImage(completion: @escaping (UIImage?) -> Void) {
+        ImageDownloader.downloadImage(from: artworkUrl100, completion: completion)
+    }
+    
 }
