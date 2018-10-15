@@ -13,8 +13,29 @@ class PodcastListViewModel {
     
     //MARK: Properties
     var podcastViewModels: [PodcastViewModel] = [PodcastViewModel]()
+    var dataProvider: DataProvider<PodcastList>?
+    let onDataUpdated: () -> Void
+    
+    //MARK: Initializer
+    init(onDataUpdated: @escaping () -> Void) {
+        self.onDataUpdated = onDataUpdated
+        self.prepareDataProvider()
+    }
     
     //MARK: Podcasts management methods
+    private func prepareDataProvider() {
+        let webService = WebService<PodcastList>(feed: PodcastFeed(termToSearch: "depechemode"))
+        self.dataProvider = DataProvider(webService: webService, onDataUpdate: { [weak self] podcastList in
+            let podcasts = podcastList.results
+            self?.podcastViewModels = podcasts.map(PodcastViewModel.init)
+            self?.onDataUpdated()
+        })
+    }
+    
+    func fetchData() {
+        self.dataProvider?.getData()
+    }
+    
     func podcastViewModel(at index: Int) -> PodcastViewModel {
         return podcastViewModels[index]
     }

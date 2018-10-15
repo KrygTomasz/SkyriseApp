@@ -10,18 +10,20 @@ import UIKit
 
 class PodcastListTableViewController: UITableViewController {
 
-    private var podcastListViewModel: PodcastListViewModel = PodcastListViewModel()
-    private var webService: WebService<PodcastList>!
+    private var podcastListViewModel: PodcastListViewModel!
     private var dataSource: TableViewDataSource<PodcastTableViewCell, PodcastViewModel>!
-    private var dataProvider: DataProvider<PodcastList>!
     private let podcastCellIdentifier: String = "PodcastTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        podcastListViewModel = PodcastListViewModel(onDataUpdated: {
+            DispatchQueue.main.async {
+                self.prepareDataSource()
+            }
+        })
         prepareTableView()
         prepareDataSource()
-        prepareDataProvider()
-        dataProvider.getData()
+        podcastListViewModel.fetchData()
     }
     
     private func prepareTableView() {
@@ -40,17 +42,6 @@ class PodcastListTableViewController: UITableViewController {
         self.dataSource = TableViewDataSource(cellIdentifier: self.podcastCellIdentifier, viewModels: self.podcastListViewModel.podcastViewModels, configureCell: self.configureCell)
         self.tableView.dataSource = self.dataSource
         self.tableView.reloadData()
-    }
-    
-    private func prepareDataProvider() {
-        self.webService = WebService<PodcastList>(feed: PodcastFeed(termToSearch: "depechemode"))
-        self.dataProvider = DataProvider(webService: self.webService, onDataUpdate: { [weak self] podcastList in
-            let podcasts = podcastList.results
-            self?.podcastListViewModel.podcastViewModels = podcasts.map(PodcastViewModel.init)
-            DispatchQueue.main.async {
-                self?.prepareDataSource()
-            }
-        })
     }
     
     private func configureCell(_ cell: PodcastTableViewCell, using viewModel: PodcastViewModel) {
