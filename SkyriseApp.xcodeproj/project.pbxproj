@@ -25,6 +25,7 @@
 		0AD784192174501C0085DB80 /* PodcastDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD784182174501C0085DB80 /* PodcastDetailsViewModel.swift */; };
 		0AD7841B217453AA0085DB80 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7841A217453AA0085DB80 /* ImageDownloader.swift */; };
 		0AD7841D217464E50085DB80 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7841C217464E50085DB80 /* UIViewController+Extensions.swift */; };
+		0AD7843221746EB70085DB80 /* AuthorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7843121746EB70085DB80 /* AuthorPicker.swift */; };
 		0AE21B82217367EC00584184 /* PodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B81217367EC00584184 /* PodcastViewModel.swift */; };
 		0AE21B84217368F500584184 /* PodcastListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B83217368F400584184 /* PodcastListViewModel.swift */; };
 		0AE21B87217369F500584184 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B86217369F500584184 /* TableViewDataSource.swift */; };
@@ -53,6 +54,7 @@
 		0AD784182174501C0085DB80 /* PodcastDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewModel.swift; sourceTree = "<group>"; };
 		0AD7841A217453AA0085DB80 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		0AD7841C217464E50085DB80 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0AD7843121746EB70085DB80 /* AuthorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorPicker.swift; sourceTree = "<group>"; };
 		0AE21B81217367EC00584184 /* PodcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewModel.swift; sourceTree = "<group>"; };
 		0AE21B83217368F400584184 /* PodcastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListViewModel.swift; sourceTree = "<group>"; };
 		0AE21B86217369F500584184 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				0A27CC9C2172523B002FF211 /* Assets.xcassets */,
 				0A27CC9E2172523B002FF211 /* LaunchScreen.storyboard */,
 				0A27CCA12172523B002FF211 /* Info.plist */,
+				0AD7843121746EB70085DB80 /* AuthorPicker.swift */,
 			);
 			path = SkyriseApp;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				0A27CC982172523A002FF211 /* PodcastListTableViewController.swift in Sources */,
 				0A2261CF217268DA00D3ABA1 /* Feed.swift in Sources */,
 				0AE21B84217368F500584184 /* PodcastListViewModel.swift in Sources */,
+				0AD7843221746EB70085DB80 /* AuthorPicker.swift in Sources */,
 				0AD784192174501C0085DB80 /* PodcastDetailsViewModel.swift in Sources */,
 				0A2261DA21726C0A00D3ABA1 /* PodcastList.swift in Sources */,
 				0AD7841D217464E50085DB80 /* UIViewController+Extensions.swift in Sources */,
