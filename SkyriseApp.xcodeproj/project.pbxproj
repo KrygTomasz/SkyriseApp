@@ -33,9 +33,22 @@
 		0AE21B87217369F500584184 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B86217369F500584184 /* TableViewDataSource.swift */; };
 		0AE21B8A21736AEE00584184 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B8921736AEE00584184 /* DataProvider.swift */; };
 		0AE21B8D2173A4F400584184 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B8C2173A4F400584184 /* UIColor+Extensions.swift */; };
+		D9C4A12D3BA505B99F0C460F /* Pods_SkyriseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B433A5680AFC001882C1BB8 /* Pods_SkyriseApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0A0964602174C6E800D24A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A27CC8A2172523A002FF211 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A27CC912172523A002FF211;
+			remoteInfo = SkyriseApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		06633CABCEF8B892C0FDF335 /* Pods-SkyriseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyriseApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyriseApp/Pods-SkyriseApp.release.xcconfig"; sourceTree = "<group>"; };
+		0A09645B2174C6E800D24A54 /* WebServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2261BD217256C500D3ABA1 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		0A2261BE217256C500D3ABA1 /* PodcastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastTableViewCell.xib; sourceTree = "<group>"; };
 		0A2261C521725B2800D3ABA1 /* PodcastDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewController.swift; sourceTree = "<group>"; };
@@ -65,13 +78,23 @@
 		0AE21B86217369F500584184 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		0AE21B8921736AEE00584184 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		0AE21B8C2173A4F400584184 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		2B433A5680AFC001882C1BB8 /* Pods_SkyriseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyriseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D69C7FC79B11065027F8F8DC /* Pods-SkyriseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyriseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyriseApp/Pods-SkyriseApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0A0964582174C6E800D24A54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A27CC8F2172523A002FF211 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9C4A12D3BA505B99F0C460F /* Pods_SkyriseApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +163,8 @@
 			children = (
 				0A27CC942172523A002FF211 /* SkyriseApp */,
 				0A27CC932172523A002FF211 /* Products */,
+				FDB41BB366138628CB8B3059 /* Pods */,
+				448B332086809F4AB62A608E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				0A27CC922172523A002FF211 /* SkyriseApp.app */,
+				0A09645B2174C6E800D24A54 /* WebServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,16 +234,53 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		448B332086809F4AB62A608E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B433A5680AFC001882C1BB8 /* Pods_SkyriseApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDB41BB366138628CB8B3059 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D69C7FC79B11065027F8F8DC /* Pods-SkyriseApp.debug.xcconfig */,
+				06633CABCEF8B892C0FDF335 /* Pods-SkyriseApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0A09645A2174C6E800D24A54 /* WebServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A0964642174C6E800D24A54 /* Build configuration list for PBXNativeTarget "WebServiceTests" */;
+			buildPhases = (
+				0A0964572174C6E800D24A54 /* Sources */,
+				0A0964582174C6E800D24A54 /* Frameworks */,
+				0A0964592174C6E800D24A54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A0964612174C6E800D24A54 /* PBXTargetDependency */,
+			);
+			name = WebServiceTests;
+			productName = WebServiceTests;
+			productReference = 0A09645B2174C6E800D24A54 /* WebServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0A27CC912172523A002FF211 /* SkyriseApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A27CCA42172523B002FF211 /* Build configuration list for PBXNativeTarget "SkyriseApp" */;
 			buildPhases = (
+				EEE9E1E8FB15458EC52A1932 /* [CP] Check Pods Manifest.lock */,
 				0A27CC8E2172523A002FF211 /* Sources */,
 				0A27CC8F2172523A002FF211 /* Frameworks */,
 				0A27CC902172523A002FF211 /* Resources */,
+				A640FE5D43320D00B8C05955 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +301,10 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Krygu;
 				TargetAttributes = {
+					0A09645A2174C6E800D24A54 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 0A27CC912172523A002FF211;
+					};
 					0A27CC912172523A002FF211 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -258,11 +325,19 @@
 			projectRoot = "";
 			targets = (
 				0A27CC912172523A002FF211 /* SkyriseApp */,
+				0A09645A2174C6E800D24A54 /* WebServiceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0A0964592174C6E800D24A54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A27CC902172523A002FF211 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,7 +352,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A640FE5D43320D00B8C05955 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SkyriseApp/Pods-SkyriseApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyriseApp/Pods-SkyriseApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEE9E1E8FB15458EC52A1932 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkyriseApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		0A0964572174C6E800D24A54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A27CC8E2172523A002FF211 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +437,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0A0964612174C6E800D24A54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A27CC912172523A002FF211 /* SkyriseApp */;
+			targetProxy = 0A0964602174C6E800D24A54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		0A27CC992172523A002FF211 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -337,6 +474,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0A0964622174C6E800D24A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3FMVQ97S47;
+				INFOPLIST_FILE = WebServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kryg.WebServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkyriseApp.app/SkyriseApp";
+			};
+			name = Debug;
+		};
+		0A0964632174C6E800D24A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3FMVQ97S47;
+				INFOPLIST_FILE = WebServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kryg.WebServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkyriseApp.app/SkyriseApp";
+			};
+			name = Release;
+		};
 		0A27CCA22172523B002FF211 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -457,6 +634,7 @@
 		};
 		0A27CCA52172523B002FF211 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D69C7FC79B11065027F8F8DC /* Pods-SkyriseApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,6 +654,7 @@
 		};
 		0A27CCA62172523B002FF211 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06633CABCEF8B892C0FDF335 /* Pods-SkyriseApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -496,6 +675,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0A0964642174C6E800D24A54 /* Build configuration list for PBXNativeTarget "WebServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A0964622174C6E800D24A54 /* Debug */,
+				0A0964632174C6E800D24A54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0A27CC8D2172523A002FF211 /* Build configuration list for PBXProject "SkyriseApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
