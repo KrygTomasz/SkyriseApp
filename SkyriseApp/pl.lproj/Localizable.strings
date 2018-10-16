@@ -14,3 +14,4 @@
 "serviceError" = "Błąd połączenia z usługą";
 "invalidData" = "Niepoprawne dane";
 "jsonDecodingFailure" = "Błąd podczas dekodowania pliku JSON – sprawdź zmienne modelu";
+"downloading" = "Pobieranie";

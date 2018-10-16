@@ -18,6 +18,7 @@
 		0A2261D7217269EB00D3ABA1 /* WSResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261D6217269EB00D3ABA1 /* WSResult.swift */; };
 		0A2261DA21726C0A00D3ABA1 /* PodcastList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2261D921726C0A00D3ABA1 /* PodcastList.swift */; };
 		0A263EB02175A66600DAC612 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A263EAF2175A66600DAC612 /* UITableView+Extensions.swift */; };
+		0A263EB32175AD7300DAC612 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A263EB22175AD7300DAC612 /* ProgressHUD.swift */; };
 		0A27CC962172523A002FF211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A27CC952172523A002FF211 /* AppDelegate.swift */; };
 		0A27CC982172523A002FF211 /* PodcastListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A27CC972172523A002FF211 /* PodcastListTableViewController.swift */; };
 		0A27CC9B2172523A002FF211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A27CC992172523A002FF211 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		0A2261D6217269EB00D3ABA1 /* WSResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSResult.swift; sourceTree = "<group>"; };
 		0A2261D921726C0A00D3ABA1 /* PodcastList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastList.swift; sourceTree = "<group>"; };
 		0A263EAF2175A66600DAC612 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		0A263EB22175AD7300DAC612 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		0A27CC922172523A002FF211 /* SkyriseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyriseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A27CC952172523A002FF211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A27CC972172523A002FF211 /* PodcastListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListTableViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0A263EB12175AD5F00DAC612 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0AE21B8C2173A4F400584184 /* UIColor+Extensions.swift */,
+				0AD7841C217464E50085DB80 /* UIViewController+Extensions.swift */,
+				0A263EAF2175A66600DAC612 /* UITableView+Extensions.swift */,
+				0AD7844121749D270085DB80 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0A27CC892172523A002FF211 = {
 			isa = PBXGroup;
 			children = (
@@ -229,10 +242,8 @@
 		0AE21B8B2173A4E700584184 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				0AE21B8C2173A4F400584184 /* UIColor+Extensions.swift */,
-				0AD7841C217464E50085DB80 /* UIViewController+Extensions.swift */,
-				0AD7844121749D270085DB80 /* String+Extensions.swift */,
-				0A263EAF2175A66600DAC612 /* UITableView+Extensions.swift */,
+				0A263EB12175AD5F00DAC612 /* Extensions */,
+				0A263EB22175AD7300DAC612 /* ProgressHUD.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -421,6 +432,7 @@
 				0A27CC982172523A002FF211 /* PodcastListTableViewController.swift in Sources */,
 				0A2261CF217268DA00D3ABA1 /* Feed.swift in Sources */,
 				0AE21B84217368F500584184 /* PodcastListViewModel.swift in Sources */,
+				0A263EB32175AD7300DAC612 /* ProgressHUD.swift in Sources */,
 				0A263EB02175A66600DAC612 /* UITableView+Extensions.swift in Sources */,
 				0AD7843221746EB70085DB80 /* AuthorPicker.swift in Sources */,
 				0AD784192174501C0085DB80 /* PodcastDetailsViewModel.swift in Sources */,

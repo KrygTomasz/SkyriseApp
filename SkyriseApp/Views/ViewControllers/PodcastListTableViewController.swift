@@ -31,6 +31,7 @@ class PodcastListTableViewController: UITableViewController {
     
     //MARK: View configuration methods
     private func initalSetUp() {
+        ProgressHUD.shared.setUp(navigationController: self.navigationController)
         self.setUpNavigationBar(withTitle: "podcasts".localized())
         podcastListViewModel = PodcastListViewModel(onDataUpdated: {
             DispatchQueue.main.async {

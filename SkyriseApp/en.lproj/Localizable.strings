@@ -14,3 +14,4 @@
 "serviceError" = "Web service connection error";
 "invalidData" = "Invalid data";
 "jsonDecodingFailure" = "JSON decoding failure – check model properties";
+"downloading" = "Downloading";
