@@ -19,9 +19,10 @@ class PodcastListViewModel {
     
     //MARK: Properties
     var podcastViewModels: [PodcastViewModel] = [PodcastViewModel]()
-    var authorPicker: AuthorPicker = AuthorPicker()
-    var dataProvider: DataProvider<PodcastList>?
-    let onDataUpdated: () -> Void
+    private var dataProvider: DataProvider<PodcastList>?
+    private var emptyViewState: PodcastListEmptyViewState = .none
+    private var authorPicker: AuthorPicker = AuthorPicker()
+    private let onDataUpdated: () -> Void
     var emptyViewMessage: String {
         switch emptyViewState {
         case .noData:
@@ -32,7 +33,6 @@ class PodcastListViewModel {
             return ""
         }
     }
-    private var emptyViewState: PodcastListEmptyViewState = .none
     
     //MARK: Initializer
     init(onDataUpdated: @escaping () -> Void) {

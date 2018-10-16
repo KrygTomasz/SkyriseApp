@@ -9,11 +9,16 @@
 import UIKit
 import UIEmptyState
 
+protocol PodcastListViewControllerDelegate: class {
+    func podcastListViewDidSelect(viewModel: PodcastViewModel)
+}
+
 class PodcastListTableViewController: UITableViewController {
     
     //MARK: Properties
     private var podcastListViewModel: PodcastListViewModel!
     private var dataSource: TableViewDataSource<PodcastTableViewCell, PodcastViewModel>!
+    weak var delegate: PodcastListViewControllerDelegate?
     
     private struct Constants {
         static let podcastCellIdentifier: String = "PodcastTableViewCell"
@@ -90,7 +95,7 @@ extension PodcastListTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = podcastListViewModel.podcastViewModel(at: indexPath.row)
-        goToPodcastDetails(using: model)
+        delegate?.podcastListViewDidSelect(viewModel: model)
     }
     
 }
@@ -109,6 +114,19 @@ extension PodcastListTableViewController: UIEmptyStateDelegate, UIEmptyStateData
     
     var emptyStateImageViewTintColor: UIColor? {
         return UIColor.white
+    }
+    
+}
+
+//MARK: Constructor
+extension PodcastListTableViewController {
+    
+    static func getInstance() -> PodcastListTableViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "PodcastListTableViewController") as? PodcastListTableViewController else {
+            fatalError("Cannot instantiate PodcastDetailsViewController")
+        }
+        return vc
     }
     
 }
