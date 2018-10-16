@@ -21,7 +21,13 @@ class AuthorPicker {
     
     //MARK: Initializer
     init() {
-        self.leftAuthors = defaults.object(forKey: "leftAuthors") as? [String] ?? []
+        let all = defaults.object(forKey: "allAuthors") as? [String] ?? []
+        if all != allAuthors {
+            defaults.set(allAuthors, forKey: "allAuthors")
+            self.leftAuthors = self.allAuthors
+        } else {
+            self.leftAuthors = defaults.object(forKey: "leftAuthors") as? [String] ?? []
+        }
     }
     
     //MARK: Random pick method
