@@ -10,6 +10,7 @@ import UIKit
 
 class PodcastDetailsViewController: UIViewController {
 
+    //MARK: IBOutlets
     @IBOutlet weak var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 12.0
@@ -42,21 +43,24 @@ class PodcastDetailsViewController: UIViewController {
     }
     @IBOutlet weak var artistNameLabel: UILabel!
     
+    //MARK: Properties
     var podcastDetailsViewModel: PodcastDetailsViewModel?
     
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.prepareNavigationBar(withTitle: "podcastDetails".localized())
-        self.view.backgroundColor = .backgroundColor
-        updateUI()
+        self.initialSetUp()
     }
     
-    private func updateUI() {
-        prepareData()
+    //MARK: View configuration methods
+    private func initialSetUp() {
+        self.setUpNavigationBar(withTitle: "podcastDetails".localized())
+        self.view.backgroundColor = .backgroundColor
+        setUpData()
         hideEmptyViews()
     }
     
-    private func prepareData() {
+    private func setUpData() {
         guard let vm = podcastDetailsViewModel else { return }
         priceLabel.text = vm.priceText
         trackNameLabel.text = vm.trackName
@@ -64,7 +68,7 @@ class PodcastDetailsViewController: UIViewController {
         artistNameLabel.text = vm.artistName
         vm.loadImage { [weak self] coverImage in
             DispatchQueue.main.async {
-                self?.prepareCover(coverImage)
+                self?.setUpCover(coverImage)
             }
         }
     }
@@ -75,7 +79,7 @@ class PodcastDetailsViewController: UIViewController {
         artistContentView.isHidden = vm.artistIsHidden
     }
     
-    private func prepareCover(_ image: UIImage?) {
+    private func setUpCover(_ image: UIImage?) {
         if let imageObj = image {
             self.coverImageView.image = imageObj
             self.coverContentView.isHidden = false

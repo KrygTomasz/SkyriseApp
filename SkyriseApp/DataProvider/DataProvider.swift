@@ -10,14 +10,17 @@ import Foundation
 
 class DataProvider<Model: Codable> {
     
+    //MARK: Properties
     var webService: WebService<Model>?
     var onDataUpdate: (Model) -> Void
     
+    //MARK: Initializer
     init(webService: WebService<Model>?, onDataUpdate: @escaping (Model) -> Void) {
         self.webService = webService
         self.onDataUpdate = onDataUpdate
     }
     
+    //MARK: Data fetch methods
     func getData() {
         webService?.downloadData() { [weak self] result in
             switch result {

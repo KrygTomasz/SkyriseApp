@@ -11,16 +11,19 @@ import UIKit
 
 class TableViewDataSource<Cell: UITableViewCell, ViewModel>: NSObject, UITableViewDataSource {
     
+    //MARK: Properties
     private var cellIdentifier: String
     private var viewModels: [ViewModel]
     private var configureCell: (Cell, ViewModel) -> Void
     
+    //MARK: Initializer
     init(cellIdentifier: String, viewModels: [ViewModel], configureCell: @escaping (Cell, ViewModel) -> Void) {
         self.cellIdentifier = cellIdentifier
         self.viewModels = viewModels
         self.configureCell = configureCell
     }
     
+    //MARK: UITableViewDataSource methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModels.count
     }

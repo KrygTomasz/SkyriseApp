@@ -10,6 +10,7 @@ import UIKit
 
 extension UIColor {
     
+    //MARK: Custom colors
     public class var backgroundColor: UIColor {
         return UIColor(red: 138.0/255.0, green: 155.0/255.0, blue: 202.0/255.0, alpha: 1.0)
     }

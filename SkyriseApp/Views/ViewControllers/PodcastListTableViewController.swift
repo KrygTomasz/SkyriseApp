@@ -9,38 +9,51 @@
 import UIKit
 
 class PodcastListTableViewController: UITableViewController {
-
+    
+    //MARK: Properties
     private var podcastListViewModel: PodcastListViewModel!
     private var dataSource: TableViewDataSource<PodcastTableViewCell, PodcastViewModel>!
-    private let podcastCellIdentifier: String = "PodcastTableViewCell"
     
+    private struct Constants {
+        static let podcastCellIdentifier: String = "PodcastTableViewCell"
+        static let topInset: CGFloat = 4
+        static let leftInset: CGFloat = 0
+        static let bottomInset: CGFloat = 4
+        static let rightInset: CGFloat = 0
+    }
+    
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.prepareNavigationBar(withTitle: "podcasts".localized())
-        podcastListViewModel = PodcastListViewModel(onDataUpdated: {
-            DispatchQueue.main.async {
-                self.prepareDataSource()
-            }
-        })
-        prepareTableView()
-        prepareDataSource()
+        self.initalSetUp()
         podcastListViewModel.fetchData()
     }
     
-    private func prepareTableView() {
+    //MARK: View configuration methods
+    private func initalSetUp() {
+        self.setUpNavigationBar(withTitle: "podcasts".localized())
+        podcastListViewModel = PodcastListViewModel(onDataUpdated: {
+            DispatchQueue.main.async {
+                self.setUpDataSource()
+            }
+        })
+        setUpTableView()
+        setUpDataSource()
+    }
+    
+    private func setUpTableView() {
         registerCells()
         tableView.keyboardDismissMode = .interactive
         tableView.backgroundColor = .backgroundColor
-        tableView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: Constants.topInset, left: Constants.leftInset, bottom: Constants.bottomInset, right: Constants.rightInset)
     }
     
     private func registerCells() {
-        let podcastCellNib = UINib(nibName: podcastCellIdentifier, bundle: nil)
-        tableView.register(podcastCellNib, forCellReuseIdentifier: podcastCellIdentifier)
+        tableView.registerCell(identifier: Constants.podcastCellIdentifier)
     }
     
-    private func prepareDataSource() {
-        self.dataSource = TableViewDataSource(cellIdentifier: self.podcastCellIdentifier, viewModels: self.podcastListViewModel.podcastViewModels, configureCell: self.configureCell)
+    private func setUpDataSource() {
+        self.dataSource = TableViewDataSource(cellIdentifier: Constants.podcastCellIdentifier, viewModels: self.podcastListViewModel.podcastViewModels, configureCell: self.configureCell)
         self.tableView.dataSource = self.dataSource
         self.tableView.reloadData()
     }

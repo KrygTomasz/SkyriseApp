@@ -12,12 +12,15 @@ class WebService<Model: Codable> {
     
     typealias WebSericeDownloadDataCompletion = (WSResult<Model, WSError>) -> Void
     
+    //MARK: Properties
     private var feed: Feed
     
+    //MARK: Initializer
     init(feed: Feed) {
         self.feed = feed
     }
     
+    //MARK: Data fetch methods
     func downloadData(completion: @escaping WebSericeDownloadDataCompletion) {
         guard let url = feed.getURL() else {
             completion(WSResult.failure(.wrongUrl))
