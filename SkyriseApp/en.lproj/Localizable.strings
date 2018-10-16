@@ -15,3 +15,4 @@
 "invalidData" = "Invalid data";
 "jsonDecodingFailure" = "JSON decoding failure – check model properties";
 "downloading" = "Downloading";
+"noPodcasts" = "No podcasts found";

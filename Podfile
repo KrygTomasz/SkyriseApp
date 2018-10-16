@@ -3,5 +3,5 @@ target 'SkyriseApp' do
 
   # Pods for SkyriseApp
   pod 'MBProgressHUD'
-
+  pod 'UIEmptyState'
 end

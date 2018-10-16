@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIEmptyState
 
 class PodcastListTableViewController: UITableViewController {
     
@@ -44,6 +45,7 @@ class PodcastListTableViewController: UITableViewController {
     
     private func setUpTableView() {
         registerCells()
+        setUpEmptyState()
         tableView.keyboardDismissMode = .interactive
         tableView.backgroundColor = .backgroundColor
         tableView.contentInset = UIEdgeInsets(top: Constants.topInset, left: Constants.leftInset, bottom: Constants.bottomInset, right: Constants.rightInset)
@@ -53,10 +55,16 @@ class PodcastListTableViewController: UITableViewController {
         tableView.registerCell(identifier: Constants.podcastCellIdentifier)
     }
     
+    private func setUpEmptyState() {
+        self.emptyStateDelegate = self
+        self.emptyStateDataSource = self
+    }
+    
     private func setUpDataSource() {
         self.dataSource = TableViewDataSource(cellIdentifier: Constants.podcastCellIdentifier, viewModels: self.podcastListViewModel.podcastViewModels, configureCell: self.configureCell)
         self.tableView.dataSource = self.dataSource
         self.tableView.reloadData()
+        self.reloadEmptyStateForTableView(self.tableView)
     }
     
     private func configureCell(_ cell: PodcastTableViewCell, using viewModel: PodcastViewModel) {
@@ -83,6 +91,24 @@ extension PodcastListTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = podcastListViewModel.podcastViewModel(at: indexPath.row)
         goToPodcastDetails(using: model)
+    }
+    
+}
+
+//MARK: UIEmptyStateDelegates
+extension PodcastListTableViewController: UIEmptyStateDelegate, UIEmptyStateDataSource {
+    
+    var emptyStateTitle: NSAttributedString {
+        return NSAttributedString(string: podcastListViewModel.emptyViewMessage, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    
+    var emptyStateImage: UIImage? {
+        let image = UIImage(named: "podcastIcon")?.withRenderingMode(.alwaysTemplate)
+        return image
+    }
+    
+    var emptyStateImageViewTintColor: UIColor? {
+        return UIColor.white
     }
     
 }

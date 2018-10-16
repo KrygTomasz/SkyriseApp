@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+enum PodcastListEmptyViewState {
+    case noData
+    case failure(WSError)
+    case none
+}
+
 class PodcastListViewModel {
     
     //MARK: Properties
@@ -16,6 +22,17 @@ class PodcastListViewModel {
     var authorPicker: AuthorPicker = AuthorPicker()
     var dataProvider: DataProvider<PodcastList>?
     let onDataUpdated: () -> Void
+    var emptyViewMessage: String {
+        switch emptyViewState {
+        case .noData:
+            return "noPodcasts".localized()
+        case .failure(let error):
+            return error.localizedDescription
+        case .none:
+            return ""
+        }
+    }
+    private var emptyViewState: PodcastListEmptyViewState = .none
     
     //MARK: Initializer
     init(onDataUpdated: @escaping () -> Void) {
@@ -26,10 +43,18 @@ class PodcastListViewModel {
     //MARK: Podcasts management methods
     private func prepareDataProvider() {
         let webService = WebService<PodcastList>(feed: PodcastFeed(termToSearch: authorPicker.pick()))
-        self.dataProvider = DataProvider(webService: webService, onDataUpdate: { [weak self] podcastList in
-            let podcasts = podcastList.results
-            self?.podcastViewModels = podcasts.map(PodcastViewModel.init)
-            self?.onDataUpdated()
+        self.dataProvider = DataProvider(webService: webService, onDataUpdate: { [weak self] result in
+            switch result {
+            case .success(let podcastList):
+                self?.emptyViewState = .noData
+                let podcasts = podcastList.results
+                self?.podcastViewModels = podcasts.map(PodcastViewModel.init)
+                self?.onDataUpdated()
+            case .failure(let error):
+                self?.emptyViewState = .failure(error)
+                self?.podcastViewModels = []
+                self?.onDataUpdated()
+            }
         })
     }
     

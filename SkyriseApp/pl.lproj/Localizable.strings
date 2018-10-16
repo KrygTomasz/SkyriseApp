@@ -15,3 +15,4 @@
 "invalidData" = "Niepoprawne dane";
 "jsonDecodingFailure" = "Błąd podczas dekodowania pliku JSON – sprawdź zmienne modelu";
 "downloading" = "Pobieranie";
+"noPodcasts" = "Nie znaleziono podcastów";

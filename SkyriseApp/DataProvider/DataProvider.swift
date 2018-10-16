@@ -12,10 +12,10 @@ class DataProvider<Model: Codable> {
     
     //MARK: Properties
     var webService: WebService<Model>?
-    var onDataUpdate: (Model) -> Void
+    var onDataUpdate: (WSResult<Model, WSError>) -> Void
     
     //MARK: Initializer
-    init(webService: WebService<Model>?, onDataUpdate: @escaping (Model) -> Void) {
+    init(webService: WebService<Model>?, onDataUpdate: @escaping (WSResult<Model, WSError>) -> Void) {
         self.webService = webService
         self.onDataUpdate = onDataUpdate
     }
@@ -27,12 +27,7 @@ class DataProvider<Model: Codable> {
             DispatchQueue.main.async {
                 ProgressHUD.shared.hideActivityIndicator()
             }
-            switch result {
-            case .failure(let error):
-                break
-            case .success(let data):
-                self?.onDataUpdate(data)
-            }
+            self?.onDataUpdate(result)
         }
     }
     
