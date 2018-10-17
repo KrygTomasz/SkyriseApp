@@ -21,7 +21,7 @@ class PodcastListViewModel {
     var podcastViewModels: [PodcastViewModel] = [PodcastViewModel]()
     private var dataProvider: DataProvider<PodcastList>?
     private var emptyViewState: PodcastListEmptyViewState = .none
-    private var authorPicker: AuthorPicker = AuthorPicker()
+    private var artistPicker: ArtistPicker = ArtistPicker()
     private let onDataUpdated: () -> Void
     var emptyViewMessage: String {
         switch emptyViewState {
@@ -42,7 +42,7 @@ class PodcastListViewModel {
     
     //MARK: Podcasts management methods
     private func prepareDataProvider() {
-        let webService = WebService<PodcastList>(feed: PodcastFeed(termToSearch: authorPicker.pick()))
+        let webService = WebService<PodcastList>(feed: PodcastFeed(termToSearch: artistPicker.pick()))
         self.dataProvider = DataProvider(webService: webService, onDataUpdate: { [weak self] result in
             switch result {
             case .success(let podcastList):

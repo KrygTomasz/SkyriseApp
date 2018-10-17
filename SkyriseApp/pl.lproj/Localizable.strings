@@ -8,11 +8,12 @@
 
 "podcasts" = "Podcasty";
 "podcastDetails" = "Szczegóły podcastu";
-"from" = "z";
-"by" = "przez";
+"collection" = "Album";
+"artist" = "Wykonawca";
 "wrongUrl" = "Błędny adres URL";
 "serviceError" = "Błąd połączenia z usługą";
 "invalidData" = "Niepoprawne dane";
 "jsonDecodingFailure" = "Błąd podczas dekodowania pliku JSON – sprawdź zmienne modelu";
 "downloading" = "Pobieranie";
 "noPodcasts" = "Nie znaleziono podcastów";
+"price" = "Cena";

@@ -8,11 +8,12 @@
 
 "podcasts" = "Podcasts";
 "podcastDetails" = "Podcasts details";
-"from" = "from";
-"by" = "by";
+"collection" = "Collection";
+"artist" = "Artist";
 "wrongUrl" = "Wrong url address";
 "serviceError" = "Web service connection error";
 "invalidData" = "Invalid data";
 "jsonDecodingFailure" = "JSON decoding failure – check model properties";
 "downloading" = "Downloading";
 "noPodcasts" = "No podcasts found";
+"price" = "Price";

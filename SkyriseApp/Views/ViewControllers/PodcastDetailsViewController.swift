@@ -13,12 +13,7 @@ class PodcastDetailsViewController: UIViewController {
     //MARK: IBOutlets
     @IBOutlet weak var containerView: UIView! {
         didSet {
-            containerView.layer.cornerRadius = 12.0
-        }
-    }
-    @IBOutlet weak var priceLabel: UILabel! {
-        didSet {
-            priceLabel.textColor = .lightGray
+            containerView.layer.cornerRadius = Constants.containerCornerRadius
         }
     }
     @IBOutlet weak var coverContentView: UIView! {
@@ -26,25 +21,41 @@ class PodcastDetailsViewController: UIViewController {
             coverContentView.isHidden = true
         }
     }
-    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var coverImageView: UIImageView! {
+        didSet {
+            coverImageView.layer.cornerRadius = Constants.coverCornerRadius
+            coverImageView.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var collectionContentView: UIView!
     @IBOutlet weak var collectionTitleLabel: UILabel! {
         didSet {
-            collectionTitleLabel.text = "from".localized()
+            collectionTitleLabel.text = "collection".localized() + ":"
         }
     }
     @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var artistContentView: UIView!
     @IBOutlet weak var artistTitleLabel: UILabel! {
         didSet {
-            artistTitleLabel.text = "by".localized()
+            artistTitleLabel.text = "artist".localized() + ":"
         }
     }
     @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var priceTitleLabel: UILabel! {
+        didSet {
+            priceTitleLabel.text = "price".localized() + ":"
+        }
+    }
+    @IBOutlet weak var priceLabel: UILabel!
     
     //MARK: Properties
     var podcastDetailsViewModel: PodcastDetailsViewModel?
+    
+    private struct Constants {
+        static let containerCornerRadius: CGFloat = 12.0
+        static let coverCornerRadius: CGFloat = 8.0
+    }
     
     //MARK: Lifecycle
     override func viewDidLoad() {

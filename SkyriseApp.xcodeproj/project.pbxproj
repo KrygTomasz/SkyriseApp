@@ -30,7 +30,7 @@
 		0AD784192174501C0085DB80 /* PodcastDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD784182174501C0085DB80 /* PodcastDetailsViewModel.swift */; };
 		0AD7841B217453AA0085DB80 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7841A217453AA0085DB80 /* ImageDownloader.swift */; };
 		0AD7841D217464E50085DB80 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7841C217464E50085DB80 /* UIViewController+Extensions.swift */; };
-		0AD7843221746EB70085DB80 /* AuthorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7843121746EB70085DB80 /* AuthorPicker.swift */; };
+		0AD7843221746EB70085DB80 /* ArtistPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7843121746EB70085DB80 /* ArtistPicker.swift */; };
 		0AD7843D21749CA00085DB80 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AD7843F21749CA00085DB80 /* Localizable.strings */; };
 		0AD7844221749D270085DB80 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7844121749D270085DB80 /* String+Extensions.swift */; };
 		0AE21B82217367EC00584184 /* PodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE21B81217367EC00584184 /* PodcastViewModel.swift */; };
@@ -79,7 +79,7 @@
 		0AD784182174501C0085DB80 /* PodcastDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewModel.swift; sourceTree = "<group>"; };
 		0AD7841A217453AA0085DB80 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		0AD7841C217464E50085DB80 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		0AD7843121746EB70085DB80 /* AuthorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorPicker.swift; sourceTree = "<group>"; };
+		0AD7843121746EB70085DB80 /* ArtistPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistPicker.swift; sourceTree = "<group>"; };
 		0AD7843E21749CA00085DB80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0AD7844021749CA90085DB80 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0AD7844121749D270085DB80 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 				0A27CC9C2172523B002FF211 /* Assets.xcassets */,
 				0A27CC9E2172523B002FF211 /* LaunchScreen.storyboard */,
 				0A27CCA12172523B002FF211 /* Info.plist */,
-				0AD7843121746EB70085DB80 /* AuthorPicker.swift */,
+				0AD7843121746EB70085DB80 /* ArtistPicker.swift */,
 				0AD7843F21749CA00085DB80 /* Localizable.strings */,
 			);
 			path = SkyriseApp;
@@ -455,7 +455,7 @@
 				0A263EB82175F77500DAC612 /* MainCoordinator.swift in Sources */,
 				0A263EB62175F75E00DAC612 /* Coordinator.swift in Sources */,
 				0A263EB02175A66600DAC612 /* UITableView+Extensions.swift in Sources */,
-				0AD7843221746EB70085DB80 /* AuthorPicker.swift in Sources */,
+				0AD7843221746EB70085DB80 /* ArtistPicker.swift in Sources */,
 				0AD784192174501C0085DB80 /* PodcastDetailsViewModel.swift in Sources */,
 				0A2261DA21726C0A00D3ABA1 /* PodcastList.swift in Sources */,
 				0AD7841D217464E50085DB80 /* UIViewController+Extensions.swift in Sources */,

@@ -74,6 +74,7 @@ class PodcastListTableViewController: UITableViewController {
     
     private func configureCell(_ cell: PodcastTableViewCell, using viewModel: PodcastViewModel) {
         cell.trackNameLabel.text = viewModel.trackName
+        cell.collectionNameLabel.text = viewModel.collectionName
         cell.artistNameLabel.text = viewModel.artistName
         viewModel.loadSmallImage { [weak cell] coverImage in
             DispatchQueue.main.async {

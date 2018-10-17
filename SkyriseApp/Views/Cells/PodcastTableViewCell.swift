@@ -12,15 +12,18 @@ class PodcastTableViewCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView! {
         didSet {
-            containerView.layer.cornerRadius = 5.0
+            containerView.layer.borderWidth = Constants.containerBorderWidth
+            containerView.layer.cornerRadius = Constants.containerCornerRadius
         }
     }
     @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var coverImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    private struct Constants {
+        static let containerCornerRadius: CGFloat = 5.0
+        static let containerBorderWidth: CGFloat = 2.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,10 +32,8 @@ class PodcastTableViewCell: UITableViewCell {
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         if highlighted {
-            containerView.layer.borderWidth = 2.0
             containerView.layer.borderColor = UIColor.tintColor.cgColor
         } else {
-            containerView.layer.borderWidth = 0.0
             containerView.layer.borderColor = UIColor.white.cgColor
         }
     }
