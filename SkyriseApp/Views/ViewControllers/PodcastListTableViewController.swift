@@ -16,6 +16,7 @@ protocol PodcastListViewControllerDelegate: class {
 class PodcastListTableViewController: UITableViewController {
     
     //MARK: Properties
+    private var progressHUD: ProgressHUD?
     private var podcastListViewModel: PodcastListViewModel!
     private var dataSource: TableViewDataSource<PodcastTableViewCell, PodcastViewModel>!
     weak var delegate: PodcastListViewControllerDelegate?
@@ -32,16 +33,17 @@ class PodcastListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initalSetUp()
-        podcastListViewModel.fetchData()
+        self.loadData()
     }
     
     //MARK: View configuration methods
     private func initalSetUp() {
-        ProgressHUD.shared.setUp(navigationController: self.navigationController)
+        self.progressHUD = ProgressHUD(navigationController: self.navigationController)
         self.setUpNavigationBar(withTitle: "podcasts".localized())
-        podcastListViewModel = PodcastListViewModel(onDataUpdated: {
+        self.podcastListViewModel = PodcastListViewModel(onDataUpdated: {
             DispatchQueue.main.async {
                 self.setUpDataSource()
+                self.progressHUD?.hideActivityIndicator()
             }
         })
         setUpTableView()
@@ -70,6 +72,11 @@ class PodcastListTableViewController: UITableViewController {
         self.tableView.dataSource = self.dataSource
         self.tableView.reloadData()
         self.reloadEmptyStateForTableView(self.tableView)
+    }
+    
+    private func loadData() {
+        progressHUD?.showActivityIndicator(title: "\("downloading".localized())...")
+        podcastListViewModel.fetchData()
     }
     
     private func configureCell(_ cell: PodcastTableViewCell, using viewModel: PodcastViewModel) {
@@ -125,7 +132,7 @@ extension PodcastListTableViewController {
     static func getInstance() -> PodcastListTableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "PodcastListTableViewController") as? PodcastListTableViewController else {
-            fatalError("Cannot instantiate PodcastDetailsViewController")
+            fatalError("Cannot instantiate PodcastListTableViewController")
         }
         return vc
     }

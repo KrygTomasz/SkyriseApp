@@ -9,18 +9,18 @@
 import Foundation
 import MBProgressHUD
 
-final class ProgressHUD {
+class ProgressHUD {
     
-    private init() {}
-    
-    static let shared = ProgressHUD()
+    //MARK: Properties
     private var progressHUD : MBProgressHUD = MBProgressHUD()
     private weak var navigationController: UINavigationController?
     
-    func setUp(navigationController: UINavigationController?) {
+    //MARK: Initializer
+    init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
     
+    //MARK: Show/hide methods
     func showActivityIndicator(title: String) {
         if let navController = self.navigationController {
             self.progressHUD = MBProgressHUD.showAdded(to: navController.view, animated: true)

@@ -22,11 +22,7 @@ class DataProvider<Model: Codable> {
     
     //MARK: Data fetch methods
     func getData() {
-        ProgressHUD.shared.showActivityIndicator(title: "\("downloading".localized())...")
         webService?.downloadData() { [weak self] result in
-            DispatchQueue.main.async {
-                ProgressHUD.shared.hideActivityIndicator()
-            }
             self?.onDataUpdate(result)
         }
     }

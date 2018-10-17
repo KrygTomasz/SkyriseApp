@@ -59,12 +59,11 @@ class PodcastListViewModel {
                 self?.emptyViewState = .noData
                 let podcasts = podcastList.results
                 self?.podcastViewModels = podcasts.map(PodcastViewModel.init)
-                self?.onDataUpdated()
             case .failure(let error):
                 self?.emptyViewState = .failure(error)
                 self?.podcastViewModels = []
-                self?.onDataUpdated()
             }
+            self?.onDataUpdated()
         })
     }
     
