@@ -14,8 +14,9 @@ extension UIViewController {
     //MARK: Preparing NavigationBar
     func setUpNavigationBar(withTitle title: String) {
         navigationItem.title = title
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.barTintColor = .backgroundColor
     }
     
