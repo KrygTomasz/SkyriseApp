@@ -19,11 +19,17 @@ class PodcastTableViewCell: UITableViewCell {
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var coverImageView: UIImageView! {
+        didSet {
+            coverImageView.layer.cornerRadius = Constants.coverCornerRadius
+            coverImageView.clipsToBounds = true
+        }
+    }
     
     private struct Constants {
-        static let containerCornerRadius: CGFloat = 5.0
+        static let containerCornerRadius: CGFloat = 8.0
         static let containerBorderWidth: CGFloat = 2.0
+        static let coverCornerRadius: CGFloat = 6.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

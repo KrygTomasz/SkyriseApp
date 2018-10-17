@@ -33,6 +33,16 @@ class PodcastListViewModel {
             return ""
         }
     }
+    var emptyViewImage: UIImage? {
+        switch emptyViewState {
+        case .noData:
+            return UIImage(named: "podcastIcon")
+        case .failure(_):
+            return UIImage(named: "errorIcon")
+        case .none:
+            return nil
+        }
+    }
     
     //MARK: Initializer
     init(onDataUpdated: @escaping () -> Void) {

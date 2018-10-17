@@ -109,7 +109,7 @@ extension PodcastListTableViewController: UIEmptyStateDelegate, UIEmptyStateData
     }
     
     var emptyStateImage: UIImage? {
-        let image = UIImage(named: "podcastIcon")?.withRenderingMode(.alwaysTemplate)
+        let image = podcastListViewModel.emptyViewImage?.withRenderingMode(.alwaysTemplate)
         return image
     }
     
